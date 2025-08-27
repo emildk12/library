@@ -3,6 +3,9 @@ package library.library.controllers;
 import library.library.service.BookServiceImpl;
 
 import library.library.model.Book;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +24,10 @@ public class LibraryController {
     @GetMapping("/")
     public String getHome() {
         return "Home";
+    }
+    @GetMapping("findallbooks")
+    public List<Book> findAllBooks() {
+        return bookServiceImpl.findAllBooks();
     }
     @GetMapping("/getbook/{id}")
     public Book findBookById(@PathVariable Long id) {
