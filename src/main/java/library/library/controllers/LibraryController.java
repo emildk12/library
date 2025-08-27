@@ -20,7 +20,6 @@ public class LibraryController {
     public String getHome() {
         return "Home";
     }
-
     @GetMapping("/getbook/{id}")
     public Book findBookById(@PathVariable Long id) {
         return bookServiceImpl.findBookById(id);
@@ -28,7 +27,6 @@ public class LibraryController {
     @PostMapping("/addbook")
     public String addBook(@RequestParam String title, @RequestParam String author) {
         return bookServiceImpl.addBook(title, author);
-
     }
 
 }

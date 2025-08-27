@@ -5,7 +5,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +14,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-// @Table(name = "Book")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "book_generator")
@@ -23,18 +21,4 @@ public class Book {
     private Long id;
     private String title;
     private String author;
-
-    // public String getTitle() {
-    //     return title;
-    // }
-
-    // public void setTitle(String title) {
-    //     this.title = title;
-    // }
-    // public String getAuthor() {
-    //     return author;
-    // }
-    // public void setAuthor(String author) {
-    //     this.author = author;
-    // }
 }
