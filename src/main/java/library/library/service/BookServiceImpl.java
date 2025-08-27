@@ -21,5 +21,5 @@ public class BookServiceImpl implements BookService {
         b.setAuthor(author);
         bookRepository.save(b);
         return "Book added!";
-    }    
+    } 
 }

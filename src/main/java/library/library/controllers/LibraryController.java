@@ -4,9 +4,11 @@ import library.library.service.BookServiceImpl;
 
 import library.library.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,5 +30,14 @@ public class LibraryController {
     public String addBook(@RequestParam String title, @RequestParam String author) {
         return bookServiceImpl.addBook(title, author);
     }
+    // @DeleteMapping("/deletebook")
+    // public String deleteBook(@RequestParam ??) {
+    //     return bookServiceImpl.deleteBook(??);
+    // }
+
+    // @PutMapping("editbook")
+    // public String editBook(@RequestParam ??) {
+    //     return bookServiceImpl.editBook(??);
+    // }
 
 }
