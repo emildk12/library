@@ -12,39 +12,37 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api")
 public class LibraryController {
 
     @Autowired
     private BookServiceImpl bookServiceImpl;
     
-    @GetMapping("/")
-    public String getHome() {
-        return "Home";
-    }
-    @GetMapping("findallbooks")
+    @GetMapping("/findAllBooks")
     public List<Book> findAllBooks() {
         return bookServiceImpl.findAllBooks();
     }
-    @GetMapping("/getbook/{id}")
+    @GetMapping("/findBook/{id}")
     public Book findBookById(@PathVariable Long id) {
         return bookServiceImpl.findBookById(id);
     }
-    @PostMapping("/addbook")
+    @PostMapping("/addBook")
     public String addBook(@RequestParam String title, @RequestParam String author) {
         return bookServiceImpl.addBook(title, author);
     }
-    // @DeleteMapping("/deletebook")
+    // @DeleteMapping("/deleteBook")
     // public String deleteBook(@RequestParam ??) {
     //     return bookServiceImpl.deleteBook(??);
     // }
 
-    // @PutMapping("editbook")
-    // public String editBook(@RequestParam ??) {
-    //     return bookServiceImpl.editBook(??);
+    // @DeleteMapping("/deleteAllBooks")
+    // public String deleteAllBooks(@RequestParam ??) {
+    //     return bookServiceImpl.deleteAllBooks(??);
     // }
 
 }
