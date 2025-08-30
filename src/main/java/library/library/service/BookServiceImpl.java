@@ -28,5 +28,10 @@ public class BookServiceImpl implements BookService {
         b.setAuthor(author);
         bookRepository.save(b);
         return "Book added!";
+    }
+    @Override
+    public String deleteBook(Long id) {
+        bookRepository.deleteById(id);
+        return "Book deleted!";
     } 
 }

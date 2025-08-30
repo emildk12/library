@@ -9,9 +9,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,24 +21,24 @@ public class LibraryController {
     @Autowired
     private BookServiceImpl bookServiceImpl;
     
-    @GetMapping("/findAllBooks")
+    @GetMapping("/findallbooks")
     public List<Book> findAllBooks() {
         return bookServiceImpl.findAllBooks();
     }
-    @GetMapping("/findBook/{id}")
-    public Book findBookById(@PathVariable Long id) {
+    @GetMapping("/findbook")
+    public Book findBookById(@RequestParam  Long id) {
         return bookServiceImpl.findBookById(id);
     }
-    @PostMapping("/addBook")
+    @PostMapping("/addbook")
     public String addBook(@RequestParam String title, @RequestParam String author) {
         return bookServiceImpl.addBook(title, author);
     }
-    // @DeleteMapping("/deleteBook")
-    // public String deleteBook(@RequestParam ??) {
-    //     return bookServiceImpl.deleteBook(??);
-    // }
+    @DeleteMapping("/deletebook")
+    public String deleteBook(@RequestParam Long id) {
+        return bookServiceImpl.deleteBook(id);
+    }
 
-    // @DeleteMapping("/deleteAllBooks")
+    // @DeleteMapping("/deleteallbooks")
     // public String deleteAllBooks(@RequestParam ??) {
     //     return bookServiceImpl.deleteAllBooks(??);
     // }
