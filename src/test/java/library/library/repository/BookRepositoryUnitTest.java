@@ -19,16 +19,16 @@ public class BookRepositoryUnitTest {
     // Uses H2 in-memory databse for testing purposes
 
     @Autowired
-    BookRepository bookRepository;
+    private BookRepository bookRepository;
 
-    String author;
-    String title;
-    Book book;
+    private String author;
+    private String title;
+    private Book book;
     
     @BeforeEach
     public void setup() {
-        author = "Machiavelli";
         title = "Fyrsten";
+        author = "Machiavelli";
         book = new Book();
         book.setAuthor(author);
         book.setTitle(title);

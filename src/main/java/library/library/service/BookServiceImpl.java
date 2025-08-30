@@ -22,16 +22,14 @@ public class BookServiceImpl implements BookService {
         return bookRepository.findById(id).orElse(null);
     }
     @Override
-    public String addBook(String title, String author) {
+    public Book addBook(String title, String author) {
         Book b = new Book();
         b.setTitle(title);
         b.setAuthor(author);
-        bookRepository.save(b);
-        return "Book added!";
+        return bookRepository.save(b);
     }
     @Override
-    public String deleteBook(Long id) {
+    public void deleteBook(Long id) {
         bookRepository.deleteById(id);
-        return "Book deleted!";
     } 
 }

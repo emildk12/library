@@ -6,7 +6,7 @@ import library.library.model.Book;
 public interface BookService {
     public List<Book> findAllBooks();
     public Book findBookById(Long id);
-    public String addBook(String title, String author);
-    public String deleteBook(Long id);
+    public Book addBook(String title, String author);
+    public void deleteBook(Long id);
     // public String editBook(??);
 }
