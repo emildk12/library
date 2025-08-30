@@ -7,3 +7,6 @@
 .no-bullets-list {
   list-style-type: none;
 }
+.delete-button {
+  background-color: red;
+}
