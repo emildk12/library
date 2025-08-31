@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { libraryService } from '../services/api';
-import BookList from './BookList';
 
-function DeleteButton(props) {
-    function deleteClick() {
-        libraryService.deleteBook(props.message);
+function DeleteButton({id, fetchBookList}) {
+    async function deleteClick() {
+        await libraryService.deleteBook(id);
+        fetchBookList();
     }
 
     return (

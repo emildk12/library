@@ -6,20 +6,22 @@ const BookList = () => {
     const [books, setBooks] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
+
+    const fetchAllBooks = async () => {
+        try {
+            const allBooksRespones = await libraryService.findAllBooks();
+            console.log("resp: " + allBooksRespones.data);
+            setBooks(allBooksRespones.data);
+            setLoading(false);
+        }
+        catch (e) {
+            setError("Failed to fetch books");
+            setLoading(false);
+            console.error(e);
+        }
+    };
+
     useEffect( () => {
-        const fetchAllBooks = async () => {
-            try {
-                const allBooksRespones = await libraryService.findAllBooks();
-                console.log("resp: " + allBooksRespones.data);
-                setBooks(allBooksRespones.data);
-                setLoading(false);
-            }
-            catch (e) {
-                setError("Failed to fetch books");
-                setLoading(false);
-                console.error(e);
-            }
-        };
         fetchAllBooks();
     }, []);
 
@@ -32,10 +34,17 @@ const BookList = () => {
 
     const listBooks = books.map(book => 
         <li key={book.id}>
-        <p>
-            {book.title} by {book.author}
-            <DeleteButton message={book.id}/>
-        </p>
+            <div className='container'>
+                <div className='li-text'>
+                    {book.title} by {book.author}
+                </div>
+                <div className='li-button'>
+                    <DeleteButton 
+                    id={book.id}
+                    fetchBookList = {fetchAllBooks}
+                    />
+                </div>
+            </div>     
         </li>
     );
 
