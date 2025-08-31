@@ -2,7 +2,11 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  /* display: flex;
   text-align: center;
+  justify-content: center;
+  align-items: center; */
+  
 }
 .no-bullets-list {
   list-style-type: none;
@@ -24,12 +28,12 @@
   display: inline-block;
 } 
 ul {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
+.add-button,
 .delete-button {
-  background-color: rgb(199, 94, 94);
   border: 1px solid rgba(27, 31, 35, .15);
   border-radius: 6px;
   box-sizing: border-box;
@@ -42,6 +46,23 @@ ul {
   padding: 2px 6px;
   position: relative;
   text-align: center;
+}
+.add-button {
+  background-color: rgb(67, 65, 197);
+}
+.add-button:hover {
+    background-color: rgb(54, 52, 163);
+
+}
+.add-button:active {
+    background-color: rgb(30, 29, 87);
+
+  transform: translateY(2px);
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+.delete-button {
+  background-color: rgb(199, 94, 94);
 }
 .delete-button:hover {
   background-color: rgb(170, 81, 81);
