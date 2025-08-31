@@ -1,74 +1,80 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  /* display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center; */
+    max-width: 1280px;
+    /* margin: 0 auto; */
+    /* padding: 2rem; */
+    /* display: flex;
+    text-align: center; */
+    /* justify-content: center;
+    align-items: center;  */
   
 }
 .no-bullets-list {
-  list-style-type: none;
-  box-sizing: border-box;
-  display: flex; 
-  width: 600px;
-  min-height: 70px; 
+    list-style-type: none;
+    box-sizing: border-box;
+    width: 600px;
 }
 .container {
-  display: grid; 
-  text-align: left;
-  align-items: center;
-  grid-template-columns: 9fr 1fr; 
+    display: grid; 
+    text-align: left;
+    min-height: 35px; 
+    align-items: center;
+    grid-template-columns: 9fr 1fr; 
 }
-.li-text {
-  display: inline-block;
+/* .li-text {
+    display: inline-block;
 }
 .li-button {
-  display: inline-block;
-} 
-ul {
-  display: flex;
-  flex-wrap: wrap;
-}
+    display: inline-block;
+}  */
+/* ul {
+    display: flex;
+    flex-wrap: wrap;
+} */
 
 .add-button,
 .delete-button {
-  border: 1px solid rgba(27, 31, 35, .15);
-  border-radius: 6px;
-  box-sizing: border-box;
-  color: #fff;
-  display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 20px;
-  padding: 2px 6px;
-  position: relative;
-  text-align: center;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #fff;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 2px 6px;
+    position: relative;
+    text-align: center;
 }
 .add-button {
-  background-color: rgb(67, 65, 197);
+    background-color: rgb(117, 115, 226);
 }
 .add-button:hover {
-    background-color: rgb(54, 52, 163);
+    background-color: rgb(84, 82, 179);
 
 }
 .add-button:active {
     background-color: rgb(30, 29, 87);
-
-  transform: translateY(2px);
-  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+    transform: translateY(2px);
+    box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
 
 .delete-button {
-  background-color: rgb(199, 94, 94);
+    background-color: rgb(199, 94, 94);
 }
 .delete-button:hover {
-  background-color: rgb(170, 81, 81);
+    background-color: rgb(170, 81, 81);
 }
 .delete-button:active {
-  background-color: rgb(83, 40, 40);
-  transform: translateY(2px);
-  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+    background-color: rgb(83, 40, 40);
+    transform: translateY(2px);
+    box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+.dialog-box {
+    background-color: rgb(66, 66, 66);
+    border-color: #fff;
+    color: #fff;
+}
+.input-field {
+    margin-bottom: 8px;
 }

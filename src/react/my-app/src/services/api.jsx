@@ -11,7 +11,7 @@ const api = axios.create({
 export const libraryService = {
     findAllBooks: () => api.get("/findallbooks"),
     findBook: (id) => api.get("/findbook?id=" + id),
-    addBook: (title, author) => api.post("/addbook?title=" + title + "&" + author),
+    addBook: (title, author) => api.post("/addbook?title=" + title + "&author=" + author),
     deleteBook: (id) => api.delete("/deletebook?id=" + id)
 }
 export default api;
