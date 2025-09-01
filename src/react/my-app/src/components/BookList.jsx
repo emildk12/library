@@ -1,28 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { libraryService } from '../services/api';
 import DeleteButton from './DeleteButton';
 
-const BookList = () => {
-    const [books, setBooks] = useState([]);
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true);
+export default function BookList({error, loading, books, fetchAllBooks}) {
 
-    const fetchAllBooks = async () => {
-        try {
-            const allBooksRespones = await libraryService.findAllBooks();
-            console.log("resp: " + allBooksRespones.data);
-            setBooks(allBooksRespones.data);
-            setLoading(false);
-        }
-        catch (e) {
-            setError("Failed to fetch books");
-            setLoading(false);
-            console.error(e);
-        }
-    };
-    useEffect( () => {
-        fetchAllBooks();
-    }, []);
 
     if (error) {
         return <div className='alert alert-danger'>{error}</div>;
@@ -50,4 +29,3 @@ const BookList = () => {
         <ul className='no-bullets-list'>{listBooks}</ul>
     );
 };
-export default BookList;
