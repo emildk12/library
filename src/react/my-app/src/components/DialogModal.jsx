@@ -1,23 +1,24 @@
 import { useRef } from 'react';
 import { libraryService } from '../services/api';
-import BookList from './BookList';
 
 
-export default function DialogModal({isOpen, setOpen}) {
+export default function DialogModal({isOpen, setOpen, fetchAllBooks}) {
     const modalRef = useRef();
     const titleRef = useRef();
     const authorRef = useRef();
 
-    function click() {
+    function close() {
         const dialog = modalRef.current;
+        titleRef.current.value = "";
+        authorRef.current.value = "";  
         dialog.close();
         setOpen(false);
     }
     async function handleSubmit(e) {
         e.preventDefault();
         await libraryService.addBook(titleRef.current.value, authorRef.current.value);
-        titleRef.current.value = "";
-        authorRef.current.value = "";  
+        fetchAllBooks();
+        close();
     }
 
     if(isOpen) {
@@ -40,8 +41,11 @@ export default function DialogModal({isOpen, setOpen}) {
                 <div>
                     <input className='input-field' ref={authorRef}></input>
                 </div> 
-                <button className='add-button' onClick={click} type="submit">
+                <button className='add-button' type="submit">
                     Add Book
+                </button>
+                <button className='delete-button' onClick={close} type='button'>
+                    Cancel
                 </button>
             </form>
         </dialog>
