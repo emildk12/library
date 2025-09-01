@@ -44,9 +44,6 @@ export default function DialogModal({isOpen, setOpen, fetchAllBooks}) {
                 <button className='add-button' type="submit">
                     Add Book
                 </button>
-                <button className='delete-button' onClick={close} type='button'>
-                    Cancel
-                </button>
             </form>
         </dialog>
     )
