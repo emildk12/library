@@ -2,12 +2,10 @@ import DeleteButton from './DeleteButton';
 
 export default function BookList({error, loading, books, fetchAllBooks}) {
 
-
     if (error) {
         return <div className='alert alert-danger'>{error}</div>;
     }
     if (loading) {
-        // fetchAllBooks();
         return <div>loading</div>
     }
 
